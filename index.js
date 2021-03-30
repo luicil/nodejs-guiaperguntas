@@ -8,12 +8,14 @@ app.get("/:nome?/:lang?",(req, res) =>{
 
     var nome = req.params.nome ? req.params.nome : "Luicil";
     var lang = req.params.lang ? req.params.lang : "VB";
+    const exbMsg = false;
     //res.render("index");
     res.render("index",{
         nome: nome,
         lang: lang,
         empresa: "Teste",
-        inscr: 10
+        inscr: 10,
+        Msg: exbMsg
     });
     //res.render("home");
     //res.render("principal/usuario");

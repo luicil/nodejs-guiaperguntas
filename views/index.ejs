@@ -11,7 +11,11 @@
         <hr>
         <h3>Lista de Perguntas</h3>
         <%= nome %>
-
+        <% if(Msg){ %>
+            <h1>Exibe mensagem</h1>
+        <% } else { %>
+            <h1>Não exibe mensagem</h1>
+        <% } %> 
         
 </body>
 </html>
