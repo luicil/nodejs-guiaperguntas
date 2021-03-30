@@ -8,14 +8,17 @@ app.get("/:nome?/:lang?",(req, res) =>{
 
     var nome = req.params.nome ? req.params.nome : "Luicil";
     var lang = req.params.lang ? req.params.lang : "VB";
+    var produtos=[
+        {nome: "banana", preco: 5.5},
+        {nome: "cebola", preco: 2.2}
+    ]
     const exbMsg = false;
     //res.render("index");
     res.render("index",{
         nome: nome,
         lang: lang,
-        empresa: "Teste",
-        inscr: 10,
-        Msg: exbMsg
+        Msg: exbMsg,
+        produtos
     });
     //res.render("home");
     //res.render("principal/usuario");

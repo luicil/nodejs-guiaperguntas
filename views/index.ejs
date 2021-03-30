@@ -17,5 +17,9 @@
             <h1>Não exibe mensagem</h1>
         <% } %> 
         
+<% produtos.forEach((produto) =>{ %>
+    <h3><%= produto.nome %> - <%= produto.preco %></h3>
+<% }) %> 
+
 </body>
 </html>
