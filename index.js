@@ -3,6 +3,7 @@ const app = express();
 const port = 80;
 
 app.set("view engine","ejs");
+app.use(express.static("public"));
 app.get("/:nome?/:lang?",(req, res) =>{
     //res.send("Bem vindo ao perguntas e respostas.")
 
