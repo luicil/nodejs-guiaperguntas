@@ -3,7 +3,10 @@ const router = express.Router();
 const Pergunta = require("./database/models/Pergunta");
 
 router.get("/", (req, res) => {
-    res.render("index");
+    Pergunta.findAll({raw: true}).then((perguntas) =>{
+        //console.log(perguntas);
+        res.render("index",{ perguntas: perguntas });
+    });
 });
 
 router.get("/perguntar",(req, res) =>{
