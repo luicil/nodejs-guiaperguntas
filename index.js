@@ -8,6 +8,14 @@ const routers = require("./routes.js")
 // NÃO É MAIS NECESSÁRIO BAIXAR O body-parser, AGORA FAZ PARTE DO express
 //const bodyParser = require("body-parser");
 
+const connection = require("./database/database");
+
+connection.authenticate().then(() =>{
+    console.log("Acesso ao banco de dados feita com sucesso !");
+}).catch((err) =>{
+    console.log(err);
+});
+
 app.set("view engine", "ejs");
 app.use(express.static("public"))
 //app.use(bodyParser.urlencoded({extended: false}));
