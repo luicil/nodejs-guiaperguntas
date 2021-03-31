@@ -10,11 +10,11 @@
             <div class="card-body">
                 <!-- NÃO USE GET -->
                 <form method="POST" action="/salvarpergunta">
-                    <label>Título</label>
-                    <input type="text" placeholder="Título" class="form-control">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Título" class="form-control">
                     <br>
-                    <label>Descrição</label>
-                    <textarea placeholder="Descreva a pergunta" class="form-control"></textarea>
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" placeholder="Descreva a pergunta" class="form-control"></textarea>
                     <br>
                     <button class="btn btn-primary">Cadastrar Pergunta</button>
                 </form>
