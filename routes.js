@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Pergunta = require("./database/models/Pergunta");
 
 router.get("/", (req, res) => {
     res.render("index");
@@ -12,7 +13,12 @@ router.get("/perguntar",(req, res) =>{
 router.post("/salvarpergunta", (req, res) =>{
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
-    res.send("Dados: Título = " + titulo + " Descrição = " + descricao);
+    Pergunta.create({
+        titulo: titulo,
+        descricao: descricao
+    }).then(() =>{
+        res.redirect("/");
+    });
 });
 
 module.exports = router;
