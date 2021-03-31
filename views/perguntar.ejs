@@ -7,13 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de perguntas</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+     <!-- o estilo customizado deve vir depois do estilo do bootstrap -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
+    <div class="navbar navbar-light bg-primary">
+        <a class="navbar-brand" href="/">
+            <img src="/img/guia.png" alt="">
+        </a>
+    </div>
     <div class="container">
-
-        <div class="card">
+        <div class="card" id="formulario-pergunta">
             <div class="card-header">
                 <h3>Realizar Pergunta</h3>
             </div>
@@ -25,7 +30,7 @@
                     <label>Descrição</label>
                     <textarea placeholder="Descreva a pergunta" class="form-control"></textarea>
                     <br>
-                    <button class="btn btn-success">Cadastrar Pergunta</button>
+                    <button class="btn btn-primary">Cadastrar Pergunta</button>
                 </form>
             </div>
         </div>
