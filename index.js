@@ -13,6 +13,10 @@ app.get("/perguntar",(req, res) =>{
     res.render("perguntar");
 });
 
+app.post("/salvarpergunta", (req, res) =>{
+    res.send("Formulário recebido.");
+});
+
 app.listen(port, (erro) => {
     if (erro) {
         console.log("Erro ao iniciar o servidor.");
