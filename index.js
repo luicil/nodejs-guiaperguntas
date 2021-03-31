@@ -9,6 +9,7 @@ const routers = require("./routes.js")
 //const bodyParser = require("body-parser");
 
 const connection = require("./database/database");
+const perguntaModel = require("./database/models/Pergunta");
 
 connection.authenticate().then(() =>{
     console.log("Acesso ao banco de dados feita com sucesso !");

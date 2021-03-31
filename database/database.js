@@ -5,7 +5,8 @@ const connection = new Sequelize(
     "root",
     "9Singer@9",{
         host: "localhost",
-        dialect: "mysql"
+        dialect: "mysql",
+        logging: false
     }
 );
 
