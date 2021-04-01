@@ -26,4 +26,17 @@ router.post("/salvarpergunta", (req, res) =>{
     });
 });
 
+router.get("/pergunta/:id", (req, res) =>{
+    var id = req.params.id;
+    Pergunta.findOne({
+        where: {id: id}
+    }).then((pergunta) =>{
+        if(pergunta != undefined){
+
+        } else {
+            res.redirect("/");
+        }
+    });
+});
+
 module.exports = router;
