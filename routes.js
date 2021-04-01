@@ -27,13 +27,30 @@ router.post("/salvarpergunta", (req, res) =>{
     });
 });
 
+router.post("/salvarresposta", (req, res) =>{
+    var perguntaid = req.body.perguntaid;
+    var resposta = req.body.resposta;
+    Resposta.create({
+        perguntaid: perguntaid,
+        corpo: resposta
+    }).then(() =>{
+        res.redirect("/pergunta/" + perguntaid);
+    });
+});
+
 router.get("/pergunta/:id", (req, res) =>{
     var id = req.params.id;
     Pergunta.findOne({
         where: {id: id}
     }).then((pergunta) =>{
         if(pergunta != undefined){
-            res.render("pergunta",{pergunta: pergunta});
+
+            Resposta.findAll({
+                where: {perguntaid: id},
+                order: [["id", "DESC"]]
+            }).then((respostas) =>{
+                res.render("pergunta",{pergunta: pergunta, respostas: respostas});
+            })
         } else {
             res.redirect("/");
         }
