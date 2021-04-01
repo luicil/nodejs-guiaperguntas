@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Pergunta = require("./database/models/Pergunta");
+const Resposta = require("./database/models/Resposta");
 
 router.get("/", (req, res) => {
     Pergunta.findAll({raw: true, order:[
